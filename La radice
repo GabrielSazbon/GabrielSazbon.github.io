@@ -10,16 +10,18 @@
 <h1>La radice quadrata</h1>
 <p>Scrivi il tuo numero per fare la radice quadrata</p>
 <input type="number" id="numero" oninput="calcolatrice()">
-<p>Il tuo risultato:</p>
+<p>Ecco il tuo risultato!!!</p>
 <div id="risultato"></div>
+
 
 
 <script>
 	var numeroI = document.getElementById("numero");
     var p = document.getElementById("risultato");
   
- 
- 
+  
+  
+    
     function calcolatrice(){
     	if(numeroI.value>0){
     		var x0 = numeroI.value/2;
@@ -29,11 +31,13 @@
             	var y0 = numeroI.value/x0
         	}
         	p.innerHTML = x0;
+            p.style.color="black"
      	}else if(numeroI.value==0){
         	var x0 = 0;
             p.innerHTML = x0;
         }else{
         	p.innerHTML = "ATTENZIONE!!!! Il numero deve essere maggiore di 0";
+            p.style.color="red"
         }
     }
     
