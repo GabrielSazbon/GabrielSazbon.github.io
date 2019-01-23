@@ -11,7 +11,7 @@
 <p>Scrivi il tuo numero per fare la radice quadrata</p>
 <input type="number" id="numero" oninput="calcolatrice()">
 <p>Ecco il tuo risultato!!!</p>
-<div id="risultato"></div>
+<p id="risultato"></p>
 
 
 
