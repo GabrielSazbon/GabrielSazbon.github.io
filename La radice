@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title> Radice quadrata</title>
+<style>
+</style>
 </head>
 <body>
-<input type="number" id="numero" oninput="vai()">
-<button onclick="sqrt()">
-</button>
-<div id="div">
-</div>
+
+<p> Scrivi il tuo numero per fare la radice quadrata</p>
+<input type ="number" id="numero" oninput="calcolo()">
+<p> Ecco il tuo risultato!!!!
+<p id="risultato"></p>
 
 <script>
-var numero=document.getElementById("numero")
-var div= ducument.getElementById("div")
-function vai(){
-if(numero.value>0){
-var x
-var y
-x=numero.value/2
-y=numero.value/x
-for(var i=1;i<80;i++){
-x=(x+y)/2
-y=numero.value/x
-}
-div.innerHTML=(x+y)/2
-}else{div.innerHTML="il numero deve essere>0"}
+var numeroI=document.getElementById("numero");
+var p=document.getElementById("risultato");
+
+function calcolo(){
+if(numeroI.value>0){
+var x0= numeroI.value/2;
+var y0 = numeroI.value/x0;
+for(var i=0,i<200;i++){
+var x0 = (x0+y0)/2
+var y0 = numeroI.value/x0
 }
 
-function sqrt(){
-div.innerHTML=math.sqrt(numero.value)
+p.innerHTML = x0;
+}else if(numeroI==0){
+var x0 = 0;
+p.innerHTML = x0;
+}else{
+p.innerHTML = "ATTENZIONE!!!! Il numero deve essere maggiore di 0";
+}
 }
 </script>
 
