@@ -18,12 +18,12 @@ var x
 var y
 x=numero.value/2
 y=numero.value/x
-for(var i=1;i<30;i++){
+for(var i=1;i<80;i++){
 x=(x+y)/2
 y=numero.value/x
 }
 div.innerHTML=(x+y)/2
-}else{div.innerHTML="il numero deve essere maggiore di 0"}
+}else{div.innerHTML="il numero deve essere>0"}
 }
 
 function sqrt(){
