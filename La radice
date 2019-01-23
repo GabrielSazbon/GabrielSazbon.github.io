@@ -10,7 +10,7 @@
 <p> Scrivi il tuo numero per fare la radice quadrata</p>
 <input type ="number" id="numero" oninput="calcolo()">
 <p> Ecco il tuo risultato!!!!
-<p id="risultato"></p>
+<div id="risultato"></div>
 
 <script>
 var numeroI=document.getElementById("numero");
