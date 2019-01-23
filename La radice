@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> Radice quadrata</title>
+<title>La radice</title>
 <style>
 </style>
 </head>
 <body>
 
-<p> Scrivi il tuo numero per fare la radice quadrata</p>
-<input type ="number" id="numero" oninput="calcolo()">
-<p> Ecco il tuo risultato!!!!
+<h1>La radice quadrata</h1>
+<p>Scrivi il tuo numero per fare la radice quadrata</p>
+<input type="number" id="numero" oninput="calcolatrice()">
+<p>Il tuo risultato:</p>
 <div id="risultato"></div>
 
+
 <script>
-var numeroI=document.getElementById("numero");
-var p=document.getElementById("risultato");
+	var numeroI = document.getElementById("numero");
+    var p = document.getElementById("risultato");
+  
+ 
+ 
+    function calcolatrice(){
+    	if(numeroI.value>0){
+    		var x0 = numeroI.value/2;
+        	var y0 = numeroI.value/x0;
+        	for(var i=0;i<200;i++){
+        		var x0 = (x0+y0)/2
+            	var y0 = numeroI.value/x0
+        	}
+        	p.innerHTML = x0;
+     	}else if(numeroI.value==0){
+        	var x0 = 0;
+            p.innerHTML = x0;
+        }else{
+        	p.innerHTML = "ATTENZIONE!!!! Il numero deve essere maggiore di 0";
+        }
+    }
+    
 
-function calcolo(){
-if(numeroI.value>0){
-var x0= numeroI.value/2;
-var y0 = numeroI.value/x0;
-for(var i=0,i<200;i++){
-var x0 = (x0+y0)/2
-var y0 = numeroI.value/x0
-}
-
-p.innerHTML = x0;
-}else if(numeroI==0){
-var x0 = 0;
-p.innerHTML = x0;
-}else{
-p.innerHTML = "ATTENZIONE!!!! Il numero deve essere maggiore di 0";
-}
-}
 </script>
 
 </body>
