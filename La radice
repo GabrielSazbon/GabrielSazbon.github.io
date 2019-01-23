@@ -6,13 +6,13 @@
 </style>
 </head>
 <body>
-
+<center>
 <h1>La radice quadrata</h1>
 <p>Scrivi il tuo numero per fare la radice quadrata</p>
 <input type="number" id="numero" oninput="calcolatrice()">
 <p>Ecco il tuo risultato!!!</p>
 <p id="risultato"></p>
-
+<center>
 
 
 <script>
@@ -43,6 +43,6 @@
     
 
 </script>
-
+<body background="https://cdn.studenti.stbm.it/images/2017/02/21/test-invalsi-matematica-terza-media-orig.jpeg"> 
 </body>
 </html>
