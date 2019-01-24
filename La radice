@@ -7,7 +7,8 @@
 </head>
 <body>
 <center>
-<h1>La radice quadrata</h1>
+<h1>La radice quadrata √</h1>
+
 <p>Scrivi il tuo numero per fare la radice quadrata</p>
 <input type="number" id="numero" oninput="calcolatrice()">
 <p>Ecco il tuo risultato!!!</p>
@@ -30,11 +31,15 @@
         		var x0 = (x0+y0)/2
             	var y0 = numeroI.value/x0
         	}
+            
+            
+            
         	p.innerHTML = x0;
             p.style.color="black"
      	}else if(numeroI.value==0){
         	var x0 = 0;
             p.innerHTML = x0;
+            
         }else{
         	p.innerHTML = "ATTENZIONE!!!! Il numero deve essere maggiore di 0";
             p.style.color="red"
@@ -42,7 +47,10 @@
     }
     
 
+
+
 </script>
+
 <body background="https://cdn.studenti.stbm.it/images/2017/02/21/test-invalsi-matematica-terza-media-orig.jpeg"> 
 </body>
 </html>
