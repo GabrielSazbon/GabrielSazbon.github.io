@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calcolo bisezione</title>
+</head>
+<body>
+
+  <h2> Funzione cubica axˆ3+bx²+cx+d </h1>
+ 
+  <div> <input type="number" id="a" placeholder="a"></input>x^3 <input type="number" id="b"placeholder="b" >x^2</input><input type="number" id="c"placeholder="c" >x</input> <input type="number" id="d"placeholder="d" ></input>  </div>
+ 
+  <h3> Scegli Xa e Xb</h3>
+  
+ 
+ <div><input type="number" id="x1" placeholder="Xa"></input>    <input type="number" id="x2" placeholder="Xb"</input></div>
+ 
+ 
+  
+  <button onclick="calcolo()">Calcolo</button>
+
+ <p id ="p" ></p>
+ 
+ 
+ 
+ <script>
+ 
+
+ 
+function calcolo(){
+
+var a = parseFloat(document.getElementById("a").value);
+var b = parseFloat(document.getElementById("b").value);
+var c = parseFloat(document.getElementById("c").value);
+var d = parseFloat(document.getElementById("d").value);
+var x1= parseFloat(document.getElementById("x1").value);
+var x2= parseFloat(document.getElementById("x2").value);
+var y1= (a*Math.pow(x1, 3)+b*Math.pow(x1, 2)+c*x1+d);
+var y2= (a*Math.pow(x2, 3)+b*Math.pow(x2, 2)+c*x2+d);
+var m = (x1+x2)/2;
+var ym= (a*Math.pow(m, 3)+b*Math.pow(m, 2)+c*m+d);
+
+
+for(i=0;i<10;i++){
+if ((y1*ym)>0) {
+
+x1=(x1+x2)/2;
+y1= (a*Math.pow(x1, 3)+b*Math.pow(x1, 2)+c*x1+d);
+m = (x1+x2)/2;
+ym= (a*Math.pow(m, 3)+b*Math.pow(m, 2)+c*m+d);
+
+} else {
+
+	x2=(x1+x2)/2;
+    y2= (a*Math.pow(x2, 3)+b*Math.pow(x2, 2)+c*x2+d);
+    m = (x1+x2)/2;
+    ym= (a*Math.pow(m, 3)+b*Math.pow(m, 2)+c*m+d);
+	}
+    	}
+
+document.getElementById("p").innerHTML= m ;
+
+}
+
+
+  	</script>
+
+  </body>
+  
+</html>
