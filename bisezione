@@ -5,61 +5,72 @@
 </head>
 <body>
 
-  <h2> Funzione cubica axˆ3+bx²+cx+d </h1>
+  <h2> Funzione ax^5 +bx^4 +cx^3 +dx^2 +ex +f </h1>
  
-  <div> <input type="number" id="a" placeholder="a"></input>x^3 <input type="number" id="b"placeholder="b" >x^2</input><input type="number" id="c"placeholder="c" >x</input> <input type="number" id="d"placeholder="d" ></input>  </div>
+  <div> <input type="number" id="a" placeholder="a">x^5 <input type="number" id="b" placeholder="b">x^4 <input type="number" id="c" placeholder="c"></input>x^3 <input type="number" id="d"placeholder="d" >x^2</input><input type="number" id="e"placeholder="e" >x</input> <input type="number" id="f"placeholder="f" ></input>  </div>
  
   <h3> Scegli Xa e Xb</h3>
   
  
- <div><input type="number" id="x1" placeholder="Xa"></input>    <input type="number" id="x2" placeholder="Xb"</input></div>
+ <div><input type="number" id="Xa" placeholder="Xa"></input>    <input type="number" id="Xb" placeholder="Xb"</input></div>
  
  
   
-  <button onclick="calcolo()">Calcolo</button>
+  <button onclick="clicca()">Clicca</button>
 
- <p id ="p" ></p>
  
+  <p > </p>
  
  
  <script>
  
 
- 
-function calcolo(){
+
+
+
+
+function funzioni(){
+return(a*Xa**5+b*Xa**4+c*Xa**3+d*Xa**2+e*Xa+f);
+
+}
+function clicca(){
+var Xa= parseFloat(document.getElementById("Xa").value);
+var Xb= parseFloat(document.getElementById("Xb").value);
+var Xm = (Xa+Xb)/2;
 
 var a = parseFloat(document.getElementById("a").value);
 var b = parseFloat(document.getElementById("b").value);
 var c = parseFloat(document.getElementById("c").value);
 var d = parseFloat(document.getElementById("d").value);
-var x1= parseFloat(document.getElementById("x1").value);
-var x2= parseFloat(document.getElementById("x2").value);
-var y1= (a*Math.pow(x1, 3)+b*Math.pow(x1, 2)+c*x1+d);
-var y2= (a*Math.pow(x2, 3)+b*Math.pow(x2, 2)+c*x2+d);
-var m = (x1+x2)/2;
-var ym= (a*Math.pow(m, 3)+b*Math.pow(m, 2)+c*m+d);
+var e = parseFloat(document.getElementById("e").value);
+var f = parseFloat(document.getElementById("f").value);
 
 
-for(i=0;i<10;i++){
-if ((y1*ym)>0) {
+for(i=0;i<30;i++){
+if ((F(Xa)*F(Xm))>0) {
 
-x1=(x1+x2)/2;
-y1= (a*Math.pow(x1, 3)+b*Math.pow(x1, 2)+c*x1+d);
-m = (x1+x2)/2;
-ym= (a*Math.pow(m, 3)+b*Math.pow(m, 2)+c*m+d);
+Xa=Xm;
+//F(Xa)= (a*Xa**5+b*Xa**4+c*Xa**3+d*Xa**2+e*Xa+f);
+//Xm = (Xa+Xb)/2;
+//F(Xm)= (a*Xm**5+b*Xm**4+c*Xm**3+d*Xm**2+e*Xm+f);
 
 } else {
 
-	x2=(x1+x2)/2;
-    y2= (a*Math.pow(x2, 3)+b*Math.pow(x2, 2)+c*x2+d);
-    m = (x1+x2)/2;
-    ym= (a*Math.pow(m, 3)+b*Math.pow(m, 2)+c*m+d);
+
+	Xb=Xm;
+    //F(Xb)= (a*Xb**5+b*Xb**4+c*Xb**3+d*Xb**2+e*Xb+f);
+    //Xm = (Xa+Xb)/2;
+    //F(Xm)= (a*Xm**5+b*Xm**4+c*Xm**3+d*Xm**2+e*Xm+f);
 	}
     	}
 
-document.getElementById("p").innerHTML= m ;
-
+//document.getElementsByTagName("p").innerHTML= Xm ;
+document.write((Xa+Xb)/2) 
 }
+
+
+
+
 
 
   	</script>
