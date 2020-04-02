@@ -5,74 +5,63 @@
 </head>
 <body>
 
-  <h2> Funzione ax^5 +bx^4 +cx^3 +dx^2 +ex +f </h1>
+  <h2> Funzione ax^5 +bx^4 +cx^3 +dx^2 +ex +f </h2>
  
-  <div> <input type="number" id="a" placeholder="a">x^5 <input type="number" id="b" placeholder="b">x^4 <input type="number" id="c" placeholder="c"></input>x^3 <input type="number" id="d"placeholder="d" >x^2</input><input type="number" id="e"placeholder="e" >x</input> <input type="number" id="f"placeholder="f" ></input>  </div>
+  <div> 
+  <input type="number" id="a" placeholder="a"> x^5 + 
+  <input type="number" id="b" placeholder="b"> x^4 + 
+  <input type="number" id="c" placeholder="c"> x^3 + 
+  <input type="number" id="d" placeholder="d">  x^2 +
+  <input type="number" id="e" placeholder="e">  x + 
+  <input type="number" id="f" placeholder="f"> 
+  </div>
  
- 
- <h3> Scegli Xa e Xb</h3>
+  <h3> Scegli Xa e Xb</h3>
   
  
- <div><input type="number" id="Xa" placeholder="Xa"></input>    <input type="number" id="Xb" placeholder="Xb"</input></div>
+ <div>
+ <input type="number" id="Xa" placeholder="Xa">    
+ <input type="number" id="Xb" placeholder="Xb"> 
+ </div>
  
+<button onclick="clicca()">Clicca</button>
  
-  
-  <button onclick="clicca()">
-  Clicca 
-  </button>
+<script>
  
-  <p > </p>
- 
- 
- <script>
- 
-
-
-
-
-
-function funzioni(X){
-return(a*X**5+b*X**4+c*X**3+d*X**2+e*X+f);
-
-}
-function clicca(){
-var Xa= parseFloat(document.getElementById("Xa").value);
-var Xb= parseFloat(document.getElementById("Xb").value);
-var Xm = (Xa+Xb)/2;
-
+function f(x){
 var a = parseFloat(document.getElementById("a").value);
 var b = parseFloat(document.getElementById("b").value);
 var c = parseFloat(document.getElementById("c").value);
 var d = parseFloat(document.getElementById("d").value);
 var e = parseFloat(document.getElementById("e").value);
 var f = parseFloat(document.getElementById("f").value);
+return(a*x**5+b*x**4+c*x**3+d*x**2+e*x+f);}
 
-
-for(i=0;i<15;i++){
-if ((funzioni(Xa))*(funzioni(Xm)))>0) {
-
-Xa=Xm;
-F(Xa)= (a*Xa**5+b*Xa**4+c*Xa**3+d*Xa**2+e*Xa+f);
-Xm = (Xa+Xb)/2;
-F(Xm)= (a*Xm**5+b*Xm**4+c*Xm**3+d*Xm**2+e*Xm+f);
-
-} else {
-
-
-	Xb=Xm;
-    F(Xb)= (a*Xb**5+b*Xb**4+c*Xb**3+d*Xb**2+e*Xb+f);
-    Xm = (Xa+Xb)/2;
-    F(Xm)= (a*Xm**5+b*Xm**4+c*Xm**3+d*Xm**2+e*Xm+f);
-	}
-    	}
-document.write("ASCISSA INTERSEZIONE ASSE X"+"<br>")
-document.getElementByTagName("p").innerHTML= Xm ;
+function clicca(){
+var Xa= parseFloat(document.getElementById("Xa").value);
+var Xb= parseFloat(document.getElementById("Xb").value);
+//var Xm=(parseFloat(document.getElementById("Xa").value)+parseFloat(document.getElementById("Xb").value))/2;
+function Xm(a,b){
+return(a+b)/2
 }
+for(i=0;i<15;i++){
+   if (f(Xa)*f(Xm(Xa,Xb))>0) {
+      Xa=Xm(Xa,Xb)
+    } else {
+      Xb=Xm(Xa,Xb)
+    }
+}
+document.write("ECCO LA SOLUZIONE DELLA TUA X!!!")
+    document.write(Xm(Xb,Xa))
+}
+
+
+
 
 
 
   	</script>
 
-</body>
+  </body>
   
 </html>
