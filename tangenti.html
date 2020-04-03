@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calcolo bisezione</title>
+</head>
+<body>
+
+  <h2> Funzione ax^5 +bx^4 +cx^3 +dx^2 +ex +f </h2>
+ 
+  <div> 
+  <input type="number" id="a" placeholder="a"> x^5 + 
+  <input type="number" id="b" placeholder="b"> x^4 + 
+  <input type="number" id="c" placeholder="c"> x^3 + 
+  <input type="number" id="d" placeholder="d">  x^2 +
+  <input type="number" id="e" placeholder="e">  x + 
+  <input type="number" id="f" placeholder="f"> 
+  </div>
+ 
+  <h3> Scegli X0 </h3>
+  
+ 
+ <div>
+ <input type="number" id="Xa" placeholder="X0">     
+ </div>
+ <br>
+<button onclick="clicca()">Clicca</button>
+ 
+<script>
+ 
+
+
+
+function clicca(){
+function f(x){
+   var a = parseFloat(document.getElementById("a").value);
+   var b = parseFloat(document.getElementById("b").value);
+   var c = parseFloat(document.getElementById("c").value);
+   var d = parseFloat(document.getElementById("d").value);
+   var e = parseFloat(document.getElementById("e").value);
+   var f = parseFloat(document.getElementById("f").value);
+   
+   return(a*x**5+b*x**4+c*x**3+d*x**2+e*x+f);
+}
+
+function derivata(x){
+    var a = parseFloat(document.getElementById("a").value);
+    var b = parseFloat(document.getElementById("b").value);
+    var c = parseFloat(document.getElementById("c").value);
+    var d = parseFloat(document.getElementById("d").value);
+    var e = parseFloat(document.getElementById("e").value);
+    var f = parseFloat(document.getElementById("f").value);
+   return(a*5*x**4+b*4*x**3+c*3*x**2+d*2*x+e);
+ }
+   var Xa= parseFloat(document.getElementById("Xa").value);
+   function X1(x){
+       return x-f(x)/derivata(x)
+   }
+
+   for(i=0;i<15;i++){
+
+     if (derivata(Xa)!=0){
+        Xa=Xa-(f(Xa)/derivata(Xa))
+     }else{
+       document.write("cambia numero")
+     }
+    }
+    document.write("ECCO LA SOLUZIONE DELLA TUA X!!!"+"<br>")
+    document.write(Xa)
+   
+}
+
+  	</script>
+
+  </body>
+  
+</html>
